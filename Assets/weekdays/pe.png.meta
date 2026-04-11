@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ce49731842ed7384db5e5385e48521a8
+guid: 9f105ceb424d1944c81869afd885b4bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5397759385407952218
-    second: homeButton_0
+      213: 5173217739645351808
+    second: weekdays4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: homeButton_0
+      name: weekdays4_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 29
-        width: 242
-        height: 242
+        x: 12
+        y: 11
+        width: 168
+        height: 165
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a55954eff81b8ea40800000000000000
-      internalID: 5397759385407952218
+      spriteID: 0877f451026fac740800000000000000
+      internalID: 5173217739645351808
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      homeButton_0: 5397759385407952218
+      weekdays4_0: 5173217739645351808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
