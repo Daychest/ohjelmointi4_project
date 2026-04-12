@@ -47,7 +47,7 @@ TagManager:
   - name: ButtonText
     uniqueID: 3583941395
     locked: 0
-  - name: Icon
+  - name: ButtonIcon
     uniqueID: 1927462075
     locked: 0
   - name: HeaderText
