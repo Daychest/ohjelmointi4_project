@@ -36,7 +36,7 @@ public class BackButton : MonoBehaviour
         switch (backMode) //katsotaan mikä moodi on valittu
         {
             case BackMode.GoHome: //jos valittu "GoHome"
-                pageManager.ShowHome(); // Mennään etusivulle
+                pageManager.ShowHome(); //mennään etusivulle
                 break;
 
             case BackMode.GoBack: //valittu "GoBack"

@@ -42,9 +42,9 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
 
     public void ShowHome() //näyttää Koti-sivun.
     {
-        HideAllPages(); //piilotetaan ensin kaikki sivut.
+        HideAllPages(); //piilotetaan ensin kaikki sivut
         if (bottomNavigationBar != null) bottomNavigationBar.SetActive(true);  //näytetään alapalkki
-        homePage.SetActive(true); //laitetaan Koti-sivu näkyviin.
+        homePage.SetActive(true); //laitetaan Koti-sivu näkyviin
     }
 
     public void ShowFriends()
