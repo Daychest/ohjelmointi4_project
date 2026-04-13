@@ -9,9 +9,16 @@ public class BackButton : MonoBehaviour
         GoBack //mene edelliselle sivulle
     }
 
+    public enum TargetPage
+    {
+        Login,
+        Home
+    }
+
     //viittaus PageManageriin
     [SerializeField] private PageManager pageManager; 
     [SerializeField] private BackMode backMode; //valitaan Inspectorissa toiminto
+    [SerializeField] private TargetPage targetPage;
 
     private void OnMouseDown() //kun spriteä klikataan
     {
@@ -33,7 +40,21 @@ public class BackButton : MonoBehaviour
                 break;
 
             case BackMode.GoBack: //valittu "GoBack"
-                pageManager.GoBack(); //mennään edelliselle sivulle
+                OpenTargetPage();
+                break;
+        }
+    }
+
+    private void OpenTargetPage()
+    {
+        switch (targetPage)
+        {
+            case TargetPage.Login:
+                pageManager.ShowLoginScreen();
+                break;
+
+            case TargetPage.Home:
+                pageManager.ShowHome();
                 break;
         }
     }

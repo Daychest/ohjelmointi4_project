@@ -2,11 +2,19 @@ using UnityEngine; //Unityn perustoiminnot
 
 public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla olevaan elementtiin.
 {
-    [Header("Pääsivut")] //Inspectoriin otsikon, jotta kentät näkyvät siistimmin.
+    [Header("Pääsivut")]
     [SerializeField] private GameObject homePage; //linkitetään Koti-sivu jne..
     [SerializeField] private GameObject friendsPage;
     [SerializeField] private GameObject trainingPage;
     [SerializeField] private GameObject profilePage;
+
+    [Header("Alapalkki")]
+    [SerializeField] private GameObject bottomNavigationBar;
+
+    [Header("Login sivut")] //tekee uuden otsikon Inspectoriin alisivuja varten. objektit voi vetää siihen suoraan
+    [SerializeField] private GameObject loginScreenPage;
+    [SerializeField] private GameObject enterLoginCredentialsPage;
+    [SerializeField] private GameObject registerAccountPage;
 
     [Header("Alisivut")] //tekee uuden otsikon Inspectoriin alisivuja varten. objektit voi vetää siihen suoraan
     [SerializeField] private GameObject qrPage;
@@ -28,13 +36,14 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     private void Start() //tämä metodi ajetaan automaattisesti sovelluksen alussa
     {
         HideAllPopups();
-        //näytetään heti alussa Koti-sivu
-        ShowHome(); 
+        if (bottomNavigationBar != null) bottomNavigationBar.SetActive(false);  //piilotetaan alapalkki
+        ShowLoginScreen(); //näytetään alussa Login-sivu
     }
 
     public void ShowHome() //näyttää Koti-sivun.
     {
         HideAllPages(); //piilotetaan ensin kaikki sivut.
+        if (bottomNavigationBar != null) bottomNavigationBar.SetActive(true);  //näytetään alapalkki
         homePage.SetActive(true); //laitetaan Koti-sivu näkyviin.
     }
 
@@ -56,9 +65,31 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         profilePage.SetActive(true);
     }
 
+    public void ShowLoginScreen()
+    {
+        HideAllPages();
+        if (bottomNavigationBar != null) bottomNavigationBar.SetActive(false);
+        loginScreenPage.SetActive(true);
+    }
+
+    public void ShowEnterLoginCredentials()
+    {
+        HideAllPages();
+        if (bottomNavigationBar != null) bottomNavigationBar.SetActive(false);
+        enterLoginCredentialsPage.SetActive(true);
+    }
+
+    public void ShowRegisterAccount()
+    {
+        HideAllPages();
+        if (bottomNavigationBar != null) bottomNavigationBar.SetActive(false);
+        registerAccountPage.SetActive(true);
+    }
+
     public void ShowQR()
     {
         HideAllPages();
+        if (bottomNavigationBar != null) bottomNavigationBar.SetActive(false);  //piilotetaan alapalkki
         qrPage.SetActive(true);
     }
 
@@ -101,6 +132,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     {
         ShowHome();
     }
+
 
 //POP UP sivut
 
@@ -149,6 +181,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     public void HideAllPopups()
     {
         if (overlay != null) overlay.SetActive(false);
+        if (QRCodeInstructionsPopup != null) QRCodeInstructionsPopup.SetActive(false);
         if (addFriendPopup != null) addFriendPopup.SetActive(false);
         if (addWorkoutPopup != null) addWorkoutPopup.SetActive(false);
         if (editWorkoutPopup != null) editWorkoutPopup.SetActive(false);
@@ -156,17 +189,20 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         if (editExercisePopup != null) editExercisePopup.SetActive(false);
     }
 
-    private void HideAllPages() // Tämä metodi piilottaa kaikki sivut kerralla.
+    private void HideAllPages()
     {
         homePage.SetActive(false);
         friendsPage.SetActive(false);
         trainingPage.SetActive(false);
         profilePage.SetActive(false);
+        loginScreenPage.SetActive(false);
+        enterLoginCredentialsPage.SetActive(false);
         qrPage.SetActive(false);
         newsPage.SetActive(false); 
         friendProfilePage.SetActive(false);
         workoutDetailPage.SetActive(false);
         visitHistoryPage.SetActive(false);
         paymentsPage.SetActive(false);
+        registerAccountPage.SetActive(false);
     }
 }
