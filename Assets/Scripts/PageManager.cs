@@ -9,7 +9,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     [SerializeField] private GameObject profilePage;
 
     [Header("Alapalkki")]
-    [SerializeField] private GameObject bottomNavigationBar;
+    //[SerializeField] private GameObject bottomNavigationBar;
 
     [Header("Login sivut")] //tekee uuden otsikon Inspectoriin alisivuja varten. objektit voi vetää siihen suoraan
     [SerializeField] private GameObject loginScreenPage;
@@ -33,24 +33,45 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     [SerializeField] private GameObject editExercisePopup;
     [SerializeField] private GameObject overlay;
 
+    [SerializeField] private GameObject startPage;
+    [SerializeField] private GameObject bottomNavigationBar;
+
+    
+
     private GameObject activePage = null;
-    private Vector3 activePageOffScreenPosition = new Vector3(0, 0, 0);
+
+    private static Vector3 phonePosition = new Vector3(0, 0, 0);
+    private Vector3 activePageOffScreenPosition = phonePosition;
+    private Vector3 bottomNavigationBarOffScreenPosition = phonePosition;
 
     private void Start() //tämä metodi ajetaan automaattisesti sovelluksen alussa
     {
-        HideAllPopups();
-        if (bottomNavigationBar != null) bottomNavigationBar.SetActive(false);  //piilotetaan alapalkki
-        ShowLoginScreen(); //näytetään alussa Login-sivu
+        //HideAllPopups();
+        //if (bottomNavigationBar != null) bottomNavigationBar.SetActive(false);  //piilotetaan alapalkki
+        //ShowLoginScreen(); //näytetään alussa Login-sivu
+        swapToPage(startPage);
+        bottomNavigationBarOffScreenPosition = bottomNavigationBar.transform.position;
     }
 
     public void swapToPage(GameObject page)
     {
-        if (activePage != null) {
+        if (activePage != null)
+        {
             activePage.transform.position = activePageOffScreenPosition;
         }
         activePage = page;
         activePageOffScreenPosition = activePage.transform.position;
-        activePage.transform.position = new Vector3(0, 0, 0);
+        activePage.transform.position = phonePosition;
+    }
+
+    public void showBottomNavigationBar()
+    {
+        bottomNavigationBar.transform.position = phonePosition;
+    }
+
+    public void hideBottomNavigationBar()
+    {
+        bottomNavigationBar.transform.position = bottomNavigationBarOffScreenPosition;
     }
 
     public void ShowHome() //näyttää Koti-sivun.
@@ -67,7 +88,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
 
     public void ShowFriends()
     {
-        HideAllPages(); 
+        HideAllPages();
         friendsPage.SetActive(true);
     }
 
@@ -152,7 +173,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     }
 
 
-//POP UP sivut
+    //POP UP sivut
 
     public void ShowQRCodeInstructionsPopup()
     {
@@ -216,7 +237,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         loginScreenPage.SetActive(false);
         enterLoginCredentialsPage.SetActive(false);
         qrPage.SetActive(false);
-        newsPage.SetActive(false); 
+        newsPage.SetActive(false);
         friendProfilePage.SetActive(false);
         workoutDetailPage.SetActive(false);
         visitHistoryPage.SetActive(false);
