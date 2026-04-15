@@ -43,7 +43,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         ShowLoginScreen(); //näytetään alussa Login-sivu
     }
 
-    private void swapToPage(GameObject page)
+    public void swapToPage(GameObject page)
     {
         if (activePage != null) {
             activePage.transform.position = activePageOffScreenPosition;
