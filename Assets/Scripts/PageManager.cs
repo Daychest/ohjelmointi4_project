@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using UnityEngine; //Unityn perustoiminnot
+using UnityEngine;
+using UnityEngine.UI;
 
 public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla olevaan elementtiin.
 {
@@ -21,6 +22,22 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         bottomNavigationBarOffScreenPosition = bottomNavigationBar.transform.position;
     }
 
+    private void disablePageButtons(GameObject page)
+    {
+        foreach (Button button in page.GetComponentsInChildren<Button>())
+        {
+            button.enabled = false;
+        }
+    }
+
+    private void enablePageButtons(GameObject page)
+    {
+        foreach (Button button in page.GetComponentsInChildren<Button>())
+        {
+            button.enabled = true;
+        }
+    }
+
     public void SwapToPage(GameObject page)
     {
         if (activePage != null)
@@ -37,6 +54,8 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         popupStack.Push(popup);
         popupPositionStack.Push(popup.transform.position);
         popup.transform.position = phonePosition;
+
+        disablePageButtons(activePage);
     }
 
     public void HidePopup()
@@ -48,6 +67,8 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
 
         GameObject popup = popupStack.Pop();
         popup.transform.position = popupPositionStack.Pop();
+
+        enablePageButtons(activePage);
     }
 
     public void ShowBottomNavigationBar()
