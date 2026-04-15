@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine; //Unityn perustoiminnot
 
 public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla olevaan elementtiin.
@@ -8,8 +9,11 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     private GameObject activePage = null;
 
     private static Vector3 phonePosition = new Vector3(0, 0, 0);
-    private Vector3 activePageOffScreenPosition = phonePosition;
-    private Vector3 bottomNavigationBarOffScreenPosition = phonePosition;
+    private Vector3 activePageOffScreenPosition;
+    private Vector3 bottomNavigationBarOffScreenPosition;
+
+    private Stack<GameObject> popupStack = new Stack<GameObject>();
+    private Stack<Vector3> popupPositionStack = new Stack<Vector3>();
 
     private void Start() //tämä metodi ajetaan automaattisesti sovelluksen alussa
     {
@@ -26,6 +30,24 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         activePage = page;
         activePageOffScreenPosition = activePage.transform.position;
         activePage.transform.position = phonePosition;
+    }
+
+    public void ActivatePopup(GameObject popup)
+    {
+        popupStack.Push(popup);
+        popupPositionStack.Push(popup.transform.position);
+        popup.transform.position = phonePosition;
+    }
+
+    public void HidePopup()
+    {
+        if (popupStack.Count <= 0)
+        {
+            return;
+        }
+
+        GameObject popup = popupStack.Pop();
+        popup.transform.position = popupPositionStack.Pop();
     }
 
     public void ShowBottomNavigationBar()

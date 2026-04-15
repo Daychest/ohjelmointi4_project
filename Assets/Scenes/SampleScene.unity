@@ -2620,7 +2620,7 @@ PrefabInstance:
       objectReference: {fileID: 1281237365}
     - target: {fileID: 51226347358202321, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HideAllPopups
+      value: HidePopup
       objectReference: {fileID: 0}
     - target: {fileID: 719647924941721003, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
       propertyPath: m_Sprite
@@ -10436,12 +10436,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 1267623378}
     m_Modifications:
     - target: {fileID: 51226347358202321, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 51226347358202321, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1281237365}
     - target: {fileID: 51226347358202321, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivatePopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 51226347358202321, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
+      objectReference: {fileID: 142287823}
+    - target: {fileID: 51226347358202321, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1506880580273369778, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
       propertyPath: m_Name
