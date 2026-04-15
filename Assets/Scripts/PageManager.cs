@@ -33,6 +33,9 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     [SerializeField] private GameObject editExercisePopup;
     [SerializeField] private GameObject overlay;
 
+    private GameObject activePage = null;
+    private Vector3 activePageOffScreenPosition = new Vector3(0, 0, 0);
+
     private void Start() //tämä metodi ajetaan automaattisesti sovelluksen alussa
     {
         HideAllPopups();
@@ -40,11 +43,26 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         ShowLoginScreen(); //näytetään alussa Login-sivu
     }
 
+    private void swapToPage(GameObject page)
+    {
+        if (activePage != null) {
+            activePage.transform.position = activePageOffScreenPosition;
+        }
+        activePage = page;
+        activePageOffScreenPosition = activePage.transform.position;
+        activePage.transform.position = new Vector3(0, 0, 0);
+    }
+
     public void ShowHome() //näyttää Koti-sivun.
     {
         HideAllPages(); //piilotetaan ensin kaikki sivut
         if (bottomNavigationBar != null) bottomNavigationBar.SetActive(true);  //näytetään alapalkki
         homePage.SetActive(true); //laitetaan Koti-sivu näkyviin
+    }
+
+    public void Test(GameObject test)
+    {
+
     }
 
     public void ShowFriends()
