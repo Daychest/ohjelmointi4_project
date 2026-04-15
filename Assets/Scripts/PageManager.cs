@@ -22,17 +22,17 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         bottomNavigationBarOffScreenPosition = bottomNavigationBar.transform.position;
     }
 
-    private void disablePageButtons(GameObject page)
+    private void disableButtons(GameObject gameObject)
     {
-        foreach (Button button in page.GetComponentsInChildren<Button>())
+        foreach (Button button in gameObject.GetComponentsInChildren<Button>())
         {
             button.enabled = false;
         }
     }
 
-    private void enablePageButtons(GameObject page)
+    private void enableButtons(GameObject gameObject)
     {
-        foreach (Button button in page.GetComponentsInChildren<Button>())
+        foreach (Button button in gameObject.GetComponentsInChildren<Button>())
         {
             button.enabled = true;
         }
@@ -49,13 +49,14 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         activePage.transform.position = phonePosition;
     }
 
-    public void ActivatePopup(GameObject popup)
+    public void ShowPopup(GameObject popup)
     {
         popupStack.Push(popup);
         popupPositionStack.Push(popup.transform.position);
         popup.transform.position = phonePosition;
 
-        disablePageButtons(activePage);
+        disableButtons(activePage);
+        disableButtons(bottomNavigationBar);
     }
 
     public void HidePopup()
@@ -68,7 +69,8 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         GameObject popup = popupStack.Pop();
         popup.transform.position = popupPositionStack.Pop();
 
-        enablePageButtons(activePage);
+        enableButtons(activePage);
+        enableButtons(bottomNavigationBar);
     }
 
     public void ShowBottomNavigationBar()
