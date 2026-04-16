@@ -53,6 +53,24 @@ TagManager:
   - name: HeaderText
     uniqueID: 2596425183
     locked: 0
+  - name: Base
+    uniqueID: 3617363169
+    locked: 0
+  - name: BaseButtons
+    uniqueID: 1813708187
+    locked: 0
+  - name: Popup1
+    uniqueID: 2362627687
+    locked: 0
+  - name: Popup1Buttons
+    uniqueID: 3072801891
+    locked: 0
+  - name: Popup2
+    uniqueID: 4240192123
+    locked: 0
+  - name: Popup2Buttons
+    uniqueID: 549237089
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
