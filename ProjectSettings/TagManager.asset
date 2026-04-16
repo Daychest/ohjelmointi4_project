@@ -41,18 +41,6 @@ TagManager:
   - name: Phone
     uniqueID: 3391203761
     locked: 0
-  - name: Button
-    uniqueID: 2405113575
-    locked: 0
-  - name: ButtonText
-    uniqueID: 3583941395
-    locked: 0
-  - name: ButtonIcon
-    uniqueID: 1927462075
-    locked: 0
-  - name: HeaderText
-    uniqueID: 2596425183
-    locked: 0
   - name: Base
     uniqueID: 3617363169
     locked: 0
