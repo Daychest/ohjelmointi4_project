@@ -38,7 +38,6 @@ public class Scrolling : MonoBehaviour
 
         if (dragging)
         {
-            print(getMousePos());
             Vector2 mouseMovement = getMousePos() - lastMousePosition;
             transform.position += new Vector3(0, mouseMovement.y, 0);
             lastMousePosition = getMousePos();
