@@ -7,19 +7,41 @@ public class Scrolling : MonoBehaviour
     public float minPos = -5;
     public float maxPos = 0;
 
+    bool dragging = false;
+    Vector2 lastMousePosition = Vector3.zero;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 scroll = Mouse.current.scroll.ReadValue();
-        transform.position -= new Vector3(0, scroll.y, 0);
+        if (!Mouse.current.leftButton.isPressed)
+        {
+            dragging = false;
+        }
 
+        if (scrollHoverArea.GetComponent<HoverCheck>().isHovered)
+        {
+            Vector2 scroll = Mouse.current.scroll.ReadValue();
+            transform.position -= new Vector3(0, scroll.y, 0);
 
+            if (Mouse.current.leftButton.isPressed && !dragging)
+            {
+                dragging = true;
+                lastMousePosition = Mouse.current.position.ReadValue();
+            }
+        }
+
+        if (dragging)
+        {
+            Vector2 mouseMovement = Mouse.current.position.ReadValue() - lastMousePosition;
+            transform.position += new Vector3(0, mouseMovement.y, 0);
+            lastMousePosition = Mouse.current.position.ReadValue();
+        }
 
         if (transform.localPosition.y > maxPos)
         {
@@ -31,5 +53,5 @@ public class Scrolling : MonoBehaviour
         }
     }
 
-    
+
 }
