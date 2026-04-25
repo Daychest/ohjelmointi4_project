@@ -8,12 +8,10 @@ public class HoverCheck : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         isHovered = true;
-        Debug.Log("Mouse entered image");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         isHovered = false;
-        Debug.Log("Mouse exited image");
     }
 }

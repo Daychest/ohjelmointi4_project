@@ -19,7 +19,7 @@ public class Scrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Mouse.current.leftButton.isPressed)
+        if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
             dragging = false;
         }
@@ -29,18 +29,19 @@ public class Scrolling : MonoBehaviour
             Vector2 scroll = Mouse.current.scroll.ReadValue();
             transform.position -= new Vector3(0, scroll.y, 0);
 
-            if (Mouse.current.leftButton.isPressed && !dragging)
+            if (Mouse.current.leftButton.wasPressedThisFrame && !dragging)
             {
                 dragging = true;
-                lastMousePosition = Mouse.current.position.ReadValue();
+                lastMousePosition = getMousePos();
             }
         }
 
         if (dragging)
         {
-            Vector2 mouseMovement = Mouse.current.position.ReadValue() - lastMousePosition;
+            print(getMousePos());
+            Vector2 mouseMovement = getMousePos() - lastMousePosition;
             transform.position += new Vector3(0, mouseMovement.y, 0);
-            lastMousePosition = Mouse.current.position.ReadValue();
+            lastMousePosition = getMousePos();
         }
 
         if (transform.localPosition.y > maxPos)
@@ -51,6 +52,13 @@ public class Scrolling : MonoBehaviour
         {
             transform.localPosition = new Vector3(transform.localPosition.x, minPos, 0);
         }
+    }
+
+    private Vector2 getMousePos()
+    {
+        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        return mouseWorldPosition;
     }
 
 
