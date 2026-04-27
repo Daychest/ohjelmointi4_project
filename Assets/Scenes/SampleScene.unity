@@ -6258,6 +6258,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520788089}
   m_CullTransparentMesh: 1
+--- !u!1 &522670792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7869865432936077974, guid: 993eea8e1606b304c89816ad1461deb8, type: 3}
+  m_PrefabInstance: {fileID: 1373153400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &522670793 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3868988787409043639, guid: 993eea8e1606b304c89816ad1461deb8, type: 3}
@@ -8713,6 +8718,7 @@ MonoBehaviour:
   addTrainingButton: {fileID: 1545825766}
   nameToCopy: {fileID: 2109012452}
   weekdayImageToCopy: {fileID: 1921051844}
+  scrollHandleToAdjust: {fileID: 522670792}
   noWeekdaySprite: {fileID: 21300000, guid: 673f06a1b319628469c9d893590fd3d9, type: 3}
 --- !u!1 &754666048
 GameObject:
@@ -16989,6 +16995,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004316367721115865, guid: 993eea8e1606b304c89816ad1461deb8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194755333217559373, guid: 993eea8e1606b304c89816ad1461deb8, type: 3}
+      propertyPath: maxPos
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

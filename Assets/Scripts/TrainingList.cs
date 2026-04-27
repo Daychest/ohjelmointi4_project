@@ -11,10 +11,12 @@ public class TrainingList : MonoBehaviour
 
     public GameObject nameToCopy;
     public GameObject weekdayImageToCopy;
+    public GameObject scrollHandleToAdjust;
 
     public Sprite noWeekdaySprite;
 
     private const float BUTTON_SPACING = 3;
+    private const float SCROLL_AREA_HEIGHT = 14;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +41,13 @@ public class TrainingList : MonoBehaviour
         addTrainingButton.transform.position = lastTrainingButton.transform.position - new Vector3(0, BUTTON_SPACING, 0);
     }
 
+    private void adjustScrollHandle()
+    {
+        float contentHeight = (trainingButtons.Count + 1) * BUTTON_SPACING - 1;
+        float maxPos = Mathf.Max(contentHeight - SCROLL_AREA_HEIGHT, 0);
+        scrollHandleToAdjust.GetComponent<Scrolling>().maxPos = maxPos;
+    }
+
     public void addTraining()
     {
         GameObject newTrainingButton = Instantiate(trainingButtonPrefab, transform);
@@ -51,6 +60,7 @@ public class TrainingList : MonoBehaviour
         trainingButtons.Add(newTrainingButton);
 
         alignTrainingButtons();
+        adjustScrollHandle();
 
         nameToCopy.GetComponent<TMP_InputField>().text = "";
         weekdayImageToCopy.GetComponent<Image>().sprite = noWeekdaySprite;
