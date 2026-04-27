@@ -100,6 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2797906368386986439}
+  - component: {fileID: 4628630957898606591}
   m_Layer: 0
   m_Name: WeekDaySelectionPopup
   m_TagString: Untagged
@@ -131,6 +132,19 @@ Transform:
   - {fileID: 6119541554874464230}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4628630957898606591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6958428616747618051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff3cd0464ef63b40926791460cebd49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  imageToChange: {fileID: 0}
 --- !u!1001 &1047106471757571926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -275,6 +289,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeekDayButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4628630957898606591}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWeekday
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeekdaySelection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3833777411722059731}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8101879795971366166, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -320,6 +358,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+--- !u!1 &3833777411722059731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+  m_PrefabInstance: {fileID: 1733268654471252248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7521686579884954638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8101879795971366166, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
@@ -605,6 +648,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeekDayButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4628630957898606591}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWeekday
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeekdaySelection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5622143360068294278}
+    - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8101879795971366166, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -653,5 +720,10 @@ PrefabInstance:
 --- !u!4 &1392715853508681051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8101879795971366166, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+  m_PrefabInstance: {fileID: 7150664040777842765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5622143360068294278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
   m_PrefabInstance: {fileID: 7150664040777842765}
   m_PrefabAsset: {fileID: 0}
