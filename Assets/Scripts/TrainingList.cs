@@ -12,6 +12,8 @@ public class TrainingList : MonoBehaviour
     public GameObject nameToCopy;
     public GameObject weekdayImageToCopy;
 
+    public Sprite noWeekdaySprite;
+
     private const float BUTTON_SPACING = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -44,10 +46,13 @@ public class TrainingList : MonoBehaviour
         var images = newTrainingButton.GetComponentsInChildren<Image>();
         images[images.Length - 1].sprite = weekdayImageToCopy.GetComponent<Image>().sprite;
 
-        newTrainingButton.GetComponentInChildren<TMP_Text>().text = nameToCopy.GetComponent<TMP_Text>().text;
+        newTrainingButton.GetComponentInChildren<TMP_Text>().text = nameToCopy.GetComponent<TMP_InputField>().text;
 
         trainingButtons.Add(newTrainingButton);
 
         alignTrainingButtons();
+
+        nameToCopy.GetComponent<TMP_InputField>().text = "";
+        weekdayImageToCopy.GetComponent<Image>().sprite = noWeekdaySprite;
     }
 }
