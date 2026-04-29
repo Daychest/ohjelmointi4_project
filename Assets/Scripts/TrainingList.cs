@@ -10,10 +10,8 @@ public class TrainingList : MonoBehaviour
     public GameObject addTrainingButton;
 
     public GameObject nameToCopy;
-    public GameObject weekdayImageToCopy;
+    public GameObject weekdayButtonToCopy;
     public GameObject scrollHandleToAdjust;
-
-    public Sprite noWeekdaySprite;
 
     private const float BUTTON_SPACING = 3;
     private const float SCROLL_AREA_HEIGHT = 14;
@@ -52,10 +50,11 @@ public class TrainingList : MonoBehaviour
     {
         GameObject newTrainingButton = Instantiate(trainingButtonPrefab, transform);
 
-        var images = newTrainingButton.GetComponentsInChildren<Image>();
-        images[images.Length - 1].sprite = weekdayImageToCopy.GetComponent<Image>().sprite;
+        var texts = newTrainingButton.GetComponentsInChildren<TMP_Text>();
+        texts[0].text = weekdayButtonToCopy.GetComponentInChildren<TMP_Text>().text;
+        texts[1].text = nameToCopy.GetComponent<TMP_InputField>().text;
 
-        newTrainingButton.GetComponentInChildren<TMP_Text>().text = nameToCopy.GetComponent<TMP_InputField>().text;
+        //newTrainingButton.GetComponentInChildren<TMP_Text>().text = nameToCopy.GetComponent<TMP_InputField>().text;
 
         trainingButtons.Add(newTrainingButton);
 
@@ -63,6 +62,6 @@ public class TrainingList : MonoBehaviour
         adjustScrollHandle();
 
         nameToCopy.GetComponent<TMP_InputField>().text = "";
-        weekdayImageToCopy.GetComponent<Image>().sprite = noWeekdaySprite;
+        weekdayButtonToCopy.GetComponentInChildren<TMP_Text>().text = "—";
     }
 }

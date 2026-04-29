@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class WeekdaySelection : MonoBehaviour
 {
-    public GameObject imageToChange;
+    public GameObject weekdayButtonToAffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +19,6 @@ public class WeekdaySelection : MonoBehaviour
 
     public void SetWeekday(GameObject weekdayButton)
     {
-        imageToChange.GetComponent<Image>().sprite = weekdayButton.GetComponentInChildren<Image>().sprite;
+        weekdayButtonToAffect.GetComponentInChildren<TMP_Text>().text = weekdayButton.GetComponentInChildren<TMP_Text>().text;
     }
 }
