@@ -156,10 +156,14 @@ PrefabInstance:
     - target: {fileID: 738563063849418948, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8dc38432cd3412b429fccaf78c9004a0, type: 3}
+      objectReference: {fileID: 21300000, guid: dc83ab267e9736d4c85accdb5818309e, type: 3}
     - target: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Name
       value: WeekDayButton (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173485283749983576, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_text
+      value: TO
       objectReference: {fileID: 0}
     - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -267,10 +271,14 @@ PrefabInstance:
     - target: {fileID: 738563063849418948, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3e16186251d5c2644937e454d4bd680b, type: 3}
+      objectReference: {fileID: 21300000, guid: dc83ab267e9736d4c85accdb5818309e, type: 3}
     - target: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Name
       value: WeekDayButton (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173485283749983576, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_text
+      value: KE
       objectReference: {fileID: 0}
     - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -379,6 +387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeekDayButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4173485283749983576, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_text
+      value: "\u2014"
+      objectReference: {fileID: 0}
     - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -485,10 +497,14 @@ PrefabInstance:
     - target: {fileID: 738563063849418948, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a3ac300d8f799f488d09e9dd10f5f3e, type: 3}
+      objectReference: {fileID: 21300000, guid: dc83ab267e9736d4c85accdb5818309e, type: 3}
     - target: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Name
       value: WeekDayButton (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173485283749983576, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_text
+      value: SU
       objectReference: {fileID: 0}
     - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -596,10 +612,14 @@ PrefabInstance:
     - target: {fileID: 738563063849418948, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9f105ceb424d1944c81869afd885b4bf, type: 3}
+      objectReference: {fileID: 21300000, guid: dc83ab267e9736d4c85accdb5818309e, type: 3}
     - target: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Name
       value: WeekDayButton (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173485283749983576, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_text
+      value: PE
       objectReference: {fileID: 0}
     - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -707,10 +727,14 @@ PrefabInstance:
     - target: {fileID: 738563063849418948, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 94fa2db036727c34587e405f04c605b7, type: 3}
+      objectReference: {fileID: 21300000, guid: dc83ab267e9736d4c85accdb5818309e, type: 3}
     - target: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Name
       value: WeekDayButton (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173485283749983576, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_text
+      value: LA
       objectReference: {fileID: 0}
     - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -818,10 +842,14 @@ PrefabInstance:
     - target: {fileID: 738563063849418948, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fa354d674b595df48b9d1dbea5211d5d, type: 3}
+      objectReference: {fileID: 21300000, guid: dc83ab267e9736d4c85accdb5818309e, type: 3}
     - target: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Name
       value: WeekDayButton (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173485283749983576, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_text
+      value: TI
       objectReference: {fileID: 0}
     - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -929,7 +957,7 @@ PrefabInstance:
     - target: {fileID: 738563063849418948, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0b84de61212c4f14790442f1b9941874, type: 3}
+      objectReference: {fileID: 21300000, guid: dc83ab267e9736d4c85accdb5818309e, type: 3}
     - target: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_Name
       value: WeekDayButton (1)
