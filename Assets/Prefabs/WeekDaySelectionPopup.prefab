@@ -962,6 +962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeekDayButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4173485283749983576, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+      propertyPath: m_text
+      value: MA
+      objectReference: {fileID: 0}
     - target: {fileID: 5973295753497154062, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
