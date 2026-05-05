@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,6 +88,12 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         }
     }
 
+    public void HideTwoPopups()
+    {
+        HidePopup();
+        HidePopup();
+    }
+
     public void ShowBottomNavigationBar()
     {
         bottomNavigationBar.transform.position = phonePosition;
@@ -95,5 +102,10 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     public void HideBottomNavigationBar()
     {
         bottomNavigationBar.transform.position = bottomNavigationBarOffScreenPosition;
+    }
+
+    public void ResetInputField(GameObject inputField)
+    {
+        inputField.GetComponent<TMP_InputField>().text = "";
     }
 }

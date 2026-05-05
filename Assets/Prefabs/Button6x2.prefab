@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.5, y: 0}
+  m_AnchoredPosition: {x: -2, y: 0}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9059105920340326586
@@ -114,7 +114,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 9, y: 2}
+  m_SizeDelta: {x: 6, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7801835187399817864
 Canvas:
@@ -136,7 +136,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1222165405
+  m_SortingLayerID: 549237089
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &6567475617750847068
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 4847452137603686682}
   - component: {fileID: 8923869167503407612}
   m_Layer: 0
-  m_Name: Button9x2
+  m_Name: Button6x2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ Transform:
   m_GameObject: {fileID: 8352455681918099259}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac95c76e6c3bb454c9a53ba13df5d43b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c46e5f534edd5f4fab5efbcb11c4b84, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
