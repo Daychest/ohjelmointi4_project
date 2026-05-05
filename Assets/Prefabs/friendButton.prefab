@@ -477,6 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7753302950780896592}
   - component: {fileID: 1793365030330030762}
+  - component: {fileID: 755627984871160551}
   m_Layer: 0
   m_Name: friendButton
   m_TagString: Untagged
@@ -556,3 +557,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &755627984871160551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589155075116206473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c896ed205107c46b604ba3d4cd8345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  nameText: {fileID: 3974953152408547270}
+  statusIcon: {fileID: 1182734300358474502}
+  absentSprite: {fileID: 21300000, guid: 96f07f94c3613a04f975529be510aab6, type: 3}
