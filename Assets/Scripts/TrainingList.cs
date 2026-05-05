@@ -16,18 +16,6 @@ public class TrainingList : MonoBehaviour
     private const float BUTTON_SPACING = 3;
     private const float SCROLL_AREA_HEIGHT = 14;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void alignTrainingButtons()
     {
         for (int i = 0; i < trainingButtons.Count; i++)

@@ -22,5 +22,7 @@ public class FriendButton : MonoBehaviour
         {
             profilePage.statusButtonText.GetComponent<TMP_Text>().text = "On salilla";
         }
+
+        transform.parent.gameObject.GetComponent<FriendButtonList>().activeFriendButton = gameObject;
     }
 }
