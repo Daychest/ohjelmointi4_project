@@ -28351,7 +28351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "YL\xC4VARTALO"
+  m_text: "Yl\xE4kroppa"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6eb65d670540b5440b1f579205c15b59, type: 2}
   m_sharedMaterial: {fileID: -2521110100836929552, guid: 6eb65d670540b5440b1f579205c15b59, type: 2}
