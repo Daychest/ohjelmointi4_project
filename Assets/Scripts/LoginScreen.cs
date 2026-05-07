@@ -23,7 +23,7 @@ public class LoginScreen : MonoBehaviour
     public GameObject pageManager;
     public GameObject homePage;
 
-    public bool validateInfo;
+    private bool validateInfo = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

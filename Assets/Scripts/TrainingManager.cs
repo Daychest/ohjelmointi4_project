@@ -129,22 +129,6 @@ public class TrainingManager : MonoBehaviour
         activeExerciseButton = exerciseButton;
     }
 
-    //public void saveExerciseEditChanges()
-    //{
-    //    for (int i = 0; i < activeTrainingButton.GetComponent<TrainingButton>().exercises.Count; i++)
-    //    {
-    //           // activeTrainingButton.GetComponent<TrainingButton>().exercises[i].name = "";// = exerciseButtons[i].GetComponent<ExerciseButton>().getName();
-    //        GameObject newExerciseButton = Instantiate(exerciseButtonPrefab, exerciseList);
-    //        exerciseButtons.Add(newExerciseButton);
-    //        newExerciseButton.GetComponent<ExerciseButton>().setName(exercise.name);
-    //        newExerciseButton.GetComponent<ExerciseButton>().setRepeats(exercise.sets, exercise.repeats);
-
-    //        newExerciseButton.GetComponent<Button>().onClick.AddListener(() => pageManager.GetComponent<PageManager>().ShowPopup(editExercisePopup));
-    //        newExerciseButton.GetComponent<Button>().onClick.AddListener(() => openExerciseEdit(newExerciseButton));
-    //    }
-
-    //}
-
     private void alignExerciseButtons()
     {
         for (int i = 0; i < exerciseButtons.Count; i++)
