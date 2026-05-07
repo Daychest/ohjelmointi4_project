@@ -21,6 +21,9 @@ public struct Exercise
 
 public class TrainingManager : MonoBehaviour
 {
+    public GameObject pageManager;
+    public GameObject editTrainingPage;
+
     public List<Training> trainings = new List<Training>();
 
     public GameObject trainingButtonPrefab;
@@ -62,8 +65,9 @@ public class TrainingManager : MonoBehaviour
         nameToCopy.GetComponentInChildren<TMP_InputField>().text = "";
         weekdayButtonToCopy.GetComponentInChildren<TMP_Text>().text = "—";
 
-
-
+        newTrainingButton.GetComponent<Button>().onClick.AddListener(() => pageManager.GetComponent<PageManager>().HideBottomNavigationBar());
+        newTrainingButton.GetComponent<Button>().onClick.AddListener(() => pageManager.GetComponent<PageManager>().SwapToPage(editTrainingPage));
+        newTrainingButton.GetComponent<Button>().onClick.AddListener(() => startEditTraining(newTrainingButton));
     }
 
     private void alignTrainingButtons()
