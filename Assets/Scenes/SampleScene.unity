@@ -8326,7 +8326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -8335,30 +8335,30 @@ PrefabInstance:
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 969836424}
+      objectReference: {fileID: 1281237365}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1281237365}
+      objectReference: {fileID: 969836424}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: addExercise
-      objectReference: {fileID: 0}
-    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: HidePopup
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: addExercise
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TrainingManager, Assembly-CSharp
+      value: PageManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: PageManager, Assembly-CSharp
+      value: TrainingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -25963,7 +25963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -25972,30 +25972,30 @@ PrefabInstance:
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 969836424}
+      objectReference: {fileID: 1281237365}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1281237365}
+      objectReference: {fileID: 969836424}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: addExercise
-      objectReference: {fileID: 0}
-    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: HidePopup
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: addExercise
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TrainingManager, Assembly-CSharp
+      value: PageManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: PageManager, Assembly-CSharp
+      value: TrainingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

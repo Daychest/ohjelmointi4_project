@@ -14,6 +14,10 @@ public class TrainingButton : MonoBehaviour
     {
         return nameObject.GetComponentInChildren<TMP_Text>().text;
     }
+    public void setName(string name)
+    {
+        nameObject.GetComponentInChildren<TMP_Text>().text = name;
+    }
     public string getWeekday()
     {
         return weekDayObject.GetComponentInChildren<TMP_Text>().text;
