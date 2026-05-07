@@ -23,22 +23,12 @@ public class LoginScreen : MonoBehaviour
     public GameObject pageManager;
     public GameObject homePage;
 
+    //Debug toggle for disabling validation
     private bool validateInfo = true;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void clearAllInputFields()
     {
+        //This ensures that previously typed emails and passwords do not linger in the input fields
         foreach (GameObject inputField in inputFieldsToClear)
         {
             inputField.GetComponentInChildren<TMP_InputField>().text = "";
@@ -52,17 +42,20 @@ public class LoginScreen : MonoBehaviour
 
     public void confirmLogin()
     {
+        //Check that all login info is correct
         loginEmailErrorBox.SetActive(false);
         loginPasswordErrorBox.SetActive(false);
 
         bool success = true;
         if (!loginEmailInputField.GetComponentInChildren<TMP_InputField>().text.Contains("@"))
         {
+            //Do not allow emails that do not have @-character
             success = false;
             loginEmailErrorBox.SetActive(true);
         }
         if (loginPasswordInputField.GetComponentInChildren<TMP_InputField>().text != "1234")
         {
+            //Ensure password was 1234
             success = false;
             loginPasswordErrorBox.SetActive(true);
         }
@@ -75,6 +68,7 @@ public class LoginScreen : MonoBehaviour
 
     public void confirmRegistration()
     {
+        //Check that all registration info is correct
         registrationEmailErrorBox.SetActive(false);
         registrationPasswordErrorBox1.SetActive(false);
         registrationPasswordErrorBox2.SetActive(false);
@@ -82,17 +76,20 @@ public class LoginScreen : MonoBehaviour
         bool success = true;
         if (!registrationEmailInputField.GetComponentInChildren<TMP_InputField>().text.Contains("@"))
         {
+            //Do not allow emails that do not have @-character
             success = false;
             registrationEmailErrorBox.SetActive(true);
         }
         if (registrationPasswordInputField1.GetComponentInChildren<TMP_InputField>().text == "")
         {
+            //Do not allow empty password
             success = false;
             registrationPasswordErrorBox1.SetActive(true);
         }
         if (registrationPasswordInputField1.GetComponentInChildren<TMP_InputField>().text != 
             registrationPasswordInputField2.GetComponentInChildren<TMP_InputField>().text)
         {
+            //Do not allow passwords that don't match
             success = false;
             registrationPasswordErrorBox2.SetActive(true);
         }
