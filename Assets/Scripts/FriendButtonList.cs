@@ -9,6 +9,7 @@ public class FriendButtonList : MonoBehaviour
 
     public void removeActiveFriendButton()
     {
+        //Removes the friend button that was last pressed
         friendButtons.Remove(activeFriendButton);
         Destroy(activeFriendButton);
         alignButtons();
