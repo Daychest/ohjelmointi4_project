@@ -23,6 +23,8 @@ public class LoginScreen : MonoBehaviour
     public GameObject pageManager;
     public GameObject homePage;
 
+    public bool validateInfo;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -64,7 +66,7 @@ public class LoginScreen : MonoBehaviour
             success = false;
             loginPasswordErrorBox.SetActive(true);
         }
-        if (success)
+        if (success || !validateInfo)
         {
             pageManager.GetComponent<PageManager>().SwapToPage(homePage);
             pageManager.GetComponent<PageManager>().ShowBottomNavigationBar();
@@ -94,7 +96,7 @@ public class LoginScreen : MonoBehaviour
             success = false;
             registrationPasswordErrorBox2.SetActive(true);
         }
-        if (success)
+        if (success || !validateInfo)
         {
             pageManager.GetComponent<PageManager>().SwapToPage(homePage);
             pageManager.GetComponent<PageManager>().ShowBottomNavigationBar();

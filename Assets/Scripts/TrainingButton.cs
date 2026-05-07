@@ -1,13 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct Exercise
-{
-    string name;
-    string weekDay;
-    int sets;
-    int repeats;
-}
 
 public class TrainingButton : MonoBehaviour
 {
