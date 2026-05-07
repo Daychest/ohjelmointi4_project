@@ -4,17 +4,17 @@ using UnityEngine;
 
 public struct Training
 {
-    string name;
-    string weekDay;
-    List<Exercise> exercises;
+    public string name;
+    public string weekDay;
+    public List<Exercise> exercises;
 }
 
+[System.Serializable]
 public struct Exercise
 {
-    string name;
-    string weekDay;
-    int sets;
-    int repeats;
+    public string name;
+    public int sets;
+    public int repeats;
 }
 
 public class TrainingManager : MonoBehaviour
@@ -25,6 +25,11 @@ public class TrainingManager : MonoBehaviour
     public List<GameObject> trainingButtons = new List<GameObject>();
     public GameObject addTrainingButton;
     public Transform trainingList;
+
+    public Transform exerciseList;
+    public List<GameObject> exerciseButtons = new List<GameObject>();
+    public GameObject exerciseButtonPrefab;
+    public GameObject addExerciseButton;
 
     public GameObject nameToCopy;
     public GameObject weekdayButtonToCopy;
@@ -49,6 +54,8 @@ public class TrainingManager : MonoBehaviour
         nameToCopy.GetComponentInChildren<TMP_InputField>().text = "";
         weekdayButtonToCopy.GetComponentInChildren<TMP_Text>().text = "—";
 
+
+
     }
 
     private void alignTrainingButtons()
@@ -71,8 +78,38 @@ public class TrainingManager : MonoBehaviour
 
     public void startEditTraining(GameObject trainingButton)
     {
+        foreach (GameObject obj in exerciseButtons)
+        {
+            Destroy(obj);
+        }
+        exerciseButtons.Clear();
 
+        foreach (Exercise exercise in trainingButton.GetComponent<TrainingButton>().exercises)
+        {
+            GameObject newExercise = Instantiate(exerciseButtonPrefab, exerciseList);
+            exerciseButtons.Add(newExercise);
+            newExercise.GetComponent<ExerciseButton>().setName(exercise.name);
+            string repeatString = exercise.sets + "x" + exercise.repeats;
+            newExercise.GetComponent<ExerciseButton>().setRepeats(repeatString);
 
+        }
+
+        alignExerciseButtons();
+
+    }
+
+    private void alignExerciseButtons()
+    {
+        for (int i = 0; i < exerciseButtons.Count; i++)
+        {
+            exerciseButtons[i].transform.position = exerciseList.position - new Vector3(0, i * BUTTON_SPACING, 0);
+        }
+
+        if (exerciseButtons.Count > 0)
+        {
+            GameObject lastExerciseButton = exerciseButtons[exerciseButtons.Count - 1];
+            addExerciseButton.transform.position = lastExerciseButton.transform.position - new Vector3(0, BUTTON_SPACING, 0);
+        }
     }
 
 
