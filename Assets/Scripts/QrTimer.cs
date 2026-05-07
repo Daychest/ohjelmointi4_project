@@ -7,23 +7,18 @@ public class QrTimer : MonoBehaviour
     private float timerMax = 31;
     public GameObject textToUpdate;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        //Reduce timer
         timer -= Time.deltaTime;
         if (timer < 0)
         {
+            //Reset timer when it falls below zero
             timer = timerMax;
         }
         int timerInt = (int)timer;
         textToUpdate.GetComponent<TMP_Text>().text = "Voimassa: " + timerInt.ToString() + "s";
-
     }
 
     public void resetTimer()

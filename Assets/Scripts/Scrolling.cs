@@ -10,12 +10,6 @@ public class Scrolling : MonoBehaviour
     bool dragging = false;
     Vector2 lastMousePosition = Vector3.zero;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -43,6 +37,7 @@ public class Scrolling : MonoBehaviour
             lastMousePosition = getMousePos();
         }
 
+        //Clamp the scroll position within its boundaries
         if (transform.localPosition.y > maxPos)
         {
             transform.localPosition = new Vector3(transform.localPosition.x, maxPos, 0);

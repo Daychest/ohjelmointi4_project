@@ -38,6 +38,7 @@ public class TrainingManager : MonoBehaviour
     public GameObject exerciseButtonPrefab;
     public GameObject addExerciseButton;
 
+    //Game objects in the add training popup, from which values for the new training can be copied
     public GameObject nameToCopy;
     public GameObject weekdayButtonToCopy;
     public GameObject scrollHandleToAdjust;
@@ -45,10 +46,12 @@ public class TrainingManager : MonoBehaviour
     private GameObject activeTrainingButton;
     private GameObject activeExerciseButton;
 
+    //Input fields in the add exercise popup, from which the new values for the exercise can be copied from
     public GameObject exerciseAddNameInput;
     public GameObject exerciseAddSetsInput;
     public GameObject exerciseAddRepeatsInput;
-    
+
+    //Input fields in the edit exercise popup, from which the new values for the exercise can be copied from
     public GameObject exerciseEditNameInput;
     public GameObject exerciseEditSetsInput;
     public GameObject exerciseEditRepeatsInput;
@@ -58,6 +61,7 @@ public class TrainingManager : MonoBehaviour
 
     public void addTraining()
     {
+        //Adds a new training button
         GameObject newTrainingButton = Instantiate(trainingButtonPrefab, trainingList.transform);
 
         var texts = newTrainingButton.GetComponentsInChildren<TMP_Text>();
@@ -72,6 +76,7 @@ public class TrainingManager : MonoBehaviour
         nameToCopy.GetComponentInChildren<TMP_InputField>().text = "";
         weekdayButtonToCopy.GetComponentInChildren<TMP_Text>().text = "—";
 
+        //Set the functions that will be called when the button is pressed
         newTrainingButton.GetComponent<Button>().onClick.AddListener(() => pageManager.GetComponent<PageManager>().HideBottomNavigationBar());
         newTrainingButton.GetComponent<Button>().onClick.AddListener(() => pageManager.GetComponent<PageManager>().SwapToPage(editTrainingPage));
         newTrainingButton.GetComponent<Button>().onClick.AddListener(() => startEditTraining(newTrainingButton));
@@ -88,6 +93,7 @@ public class TrainingManager : MonoBehaviour
         addTrainingButton.transform.position = lastTrainingButton.transform.position - new Vector3(0, BUTTON_SPACING, 0);
     }
 
+    //Update how much the list of training buttons can be scrolled by
     private void adjustScrollHandle()
     {
         float contentHeight = (trainingButtons.Count + 1) * BUTTON_SPACING - 1;
@@ -97,6 +103,7 @@ public class TrainingManager : MonoBehaviour
 
     public void startEditTraining(GameObject trainingButton)
     {
+        //Initialize the edit training page based on which training button was pressed
         activeTrainingButton = trainingButton;
 
         foreach (GameObject obj in exerciseButtons)
@@ -105,6 +112,7 @@ public class TrainingManager : MonoBehaviour
         }
         exerciseButtons.Clear();
 
+        //Create exercise buttons based on the list of exercises
         foreach (Exercise exercise in trainingButton.GetComponent<TrainingButton>().exercises)
         {
             GameObject newExerciseButton = Instantiate(exerciseButtonPrefab, exerciseList);
@@ -117,11 +125,11 @@ public class TrainingManager : MonoBehaviour
         }
 
         alignExerciseButtons();
-
     }
 
     private void openExerciseEdit(GameObject exerciseButton)
     {
+        //This sets the input fields of the edit exercise popup to have the current values filled in as default
         exerciseEditNameInput.GetComponentInChildren<TMP_InputField>().text = exerciseButton.GetComponent<ExerciseButton>().getName();
         exerciseEditRepeatsInput.GetComponentInChildren<TMP_InputField>().text = exerciseButton.GetComponent<ExerciseButton>().repeats + "";
         exerciseEditSetsInput.GetComponentInChildren<TMP_InputField>().text = exerciseButton.GetComponent<ExerciseButton>().sets + "";
@@ -152,7 +160,7 @@ public class TrainingManager : MonoBehaviour
 
         activeTrainingButton.GetComponent<TrainingButton>().exercises.Add(newExercise);
 
-        startEditTraining(activeTrainingButton);
+        startEditTraining(activeTrainingButton); //Refreshes edit training page so that the new exercise is displayed correctly
         clearExerciseAddPopup();
     }
 
