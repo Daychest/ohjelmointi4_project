@@ -6,12 +6,22 @@ public class ExerciseButton : MonoBehaviour
     public GameObject nameText;
     public GameObject repeatText;
 
+    public int sets;
+    public int repeats;
+
     public void setName(string name)
     {
         nameText.GetComponent<TMP_Text>().text = name;
     }
-    public void setRepeats(string repeats)
+    public string getName()
     {
-        repeatText.GetComponent<TMP_Text>().text = repeats;
+        return nameText.GetComponent<TMP_Text>().text;
+    }
+    public void setRepeats(int sets, int repeats)
+    {
+        string repeatString = sets + "x" + repeats;
+        repeatText.GetComponent<TMP_Text>().text = repeatString;
+        this.sets = sets;
+        this.repeats = repeats;
     }
 }

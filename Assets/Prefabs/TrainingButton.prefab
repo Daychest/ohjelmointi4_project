@@ -281,6 +281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6362b59e96fab4ba7dbc3245b98775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  exercises: []
+  nameObject: {fileID: 6380099893397826673}
+  weekDayObject: {fileID: 2969175670589056136}
 --- !u!1 &6380099893397826673
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +478,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+--- !u!1 &2969175670589056136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3258810172856342219, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}
+  m_PrefabInstance: {fileID: 291958942869320259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8386432183080906581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8101879795971366166, guid: b2e74c66201ac1c428c28bb01bf5c337, type: 3}

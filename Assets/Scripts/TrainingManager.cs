@@ -24,6 +24,8 @@ public class TrainingManager : MonoBehaviour
     public GameObject pageManager;
     public GameObject editTrainingPage;
 
+    public GameObject editExercisePopup;
+
     public List<Training> trainings = new List<Training>();
 
     public GameObject trainingButtonPrefab;
@@ -45,6 +47,10 @@ public class TrainingManager : MonoBehaviour
     public GameObject exerciseAddNameInput;
     public GameObject exerciseAddSetsInput;
     public GameObject exerciseAddRepeatsInput;
+    
+    public GameObject exerciseEditNameInput;
+    public GameObject exerciseEditSetsInput;
+    public GameObject exerciseEditRepeatsInput;
 
     private const float BUTTON_SPACING = 3;
     private const float SCROLL_AREA_HEIGHT = 14;
@@ -100,16 +106,24 @@ public class TrainingManager : MonoBehaviour
 
         foreach (Exercise exercise in trainingButton.GetComponent<TrainingButton>().exercises)
         {
-            GameObject newExercise = Instantiate(exerciseButtonPrefab, exerciseList);
-            exerciseButtons.Add(newExercise);
-            newExercise.GetComponent<ExerciseButton>().setName(exercise.name);
-            string repeatString = exercise.sets + "x" + exercise.repeats;
-            newExercise.GetComponent<ExerciseButton>().setRepeats(repeatString);
+            GameObject newExerciseButton = Instantiate(exerciseButtonPrefab, exerciseList);
+            exerciseButtons.Add(newExerciseButton);
+            newExerciseButton.GetComponent<ExerciseButton>().setName(exercise.name);
+            newExerciseButton.GetComponent<ExerciseButton>().setRepeats(exercise.sets, exercise.repeats);
 
+            newExerciseButton.GetComponent<Button>().onClick.AddListener(() => pageManager.GetComponent<PageManager>().ShowPopup(editExercisePopup));
+            newExerciseButton.GetComponent<Button>().onClick.AddListener(() => openExerciseEdit(newExerciseButton));
         }
 
         alignExerciseButtons();
 
+    }
+
+    private void openExerciseEdit(GameObject exerciseButton)
+    {
+        exerciseEditNameInput.GetComponentInChildren<TMP_InputField>().text = exerciseButton.GetComponent<ExerciseButton>().getName();
+        exerciseEditRepeatsInput.GetComponentInChildren<TMP_InputField>().text = exerciseButton.GetComponent<ExerciseButton>().repeats + "";
+        exerciseEditSetsInput.GetComponentInChildren<TMP_InputField>().text = exerciseButton.GetComponent<ExerciseButton>().sets + "";
     }
 
     private void alignExerciseButtons()

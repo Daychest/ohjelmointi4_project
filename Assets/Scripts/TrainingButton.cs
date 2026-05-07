@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
@@ -6,22 +7,15 @@ public class TrainingButton : MonoBehaviour
 {
     public List<Exercise> exercises = new List<Exercise>();
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    public GameObject nameObject;
+    public GameObject weekDayObject;
 
+    public string getName()
+    {
+        return nameObject.GetComponentInChildren<TMP_Text>().text;
     }
-
-    // Update is called once per frame
-    void Update()
+    public string getWeekday()
     {
-
-    }
-
-    public void LoadEditTraining()
-    {
-
-
-
+        return weekDayObject.GetComponentInChildren<TMP_Text>().text;
     }
 }
