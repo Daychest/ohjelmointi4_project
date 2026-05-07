@@ -6600,6 +6600,11 @@ Canvas:
   m_SortingLayerID: 1813708187
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &429191867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023244343676197707, guid: 62992d05be2746e4cbeb83dbfb5130b4, type: 3}
+  m_PrefabInstance: {fileID: 259970124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &429702050
 GameObject:
   m_ObjectHideFlags: 0
@@ -13310,6 +13315,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button8x2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 969836424}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1281237365}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: addExercise
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HidePopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TrainingManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PageManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867029881621729025, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8506851111943117107, guid: 77ee0ab8a7c8d9a4daaa59c2619d3dfc, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -14956,6 +15001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 969836423}
   - component: {fileID: 969836424}
+  - component: {fileID: 969836425}
   m_Layer: 0
   m_Name: TrainingManager
   m_TagString: Untagged
@@ -15004,6 +15050,53 @@ MonoBehaviour:
   nameToCopy: {fileID: 1718316205}
   weekdayButtonToCopy: {fileID: 1093317416}
   scrollHandleToAdjust: {fileID: 522670792}
+  exerciseAddNameInput: {fileID: 429191867}
+  exerciseAddSetsInput: {fileID: 1714713000}
+  exerciseAddRepeatsInput: {fileID: 1876514693}
+--- !u!114 &969836425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969836422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &974416054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24502,6 +24595,11 @@ Canvas:
   m_SortingLayerID: 1813708187
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1714713000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023244343676197707, guid: 8a766fda0e2b2fd4888bb0c448222d14, type: 3}
+  m_PrefabInstance: {fileID: 289401930}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1718316205 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1023244343676197707, guid: 62992d05be2746e4cbeb83dbfb5130b4, type: 3}
@@ -26747,6 +26845,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7630976925810014280, guid: 0701e31ed3c30bd4a87300269b9959b6, type: 3}
   m_PrefabInstance: {fileID: 1872307925}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1876514693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023244343676197707, guid: 8a766fda0e2b2fd4888bb0c448222d14, type: 3}
+  m_PrefabInstance: {fileID: 1002750107}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1891704355
 GameObject:

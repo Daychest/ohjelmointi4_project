@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public struct Training
 {
@@ -34,6 +36,12 @@ public class TrainingManager : MonoBehaviour
     public GameObject nameToCopy;
     public GameObject weekdayButtonToCopy;
     public GameObject scrollHandleToAdjust;
+
+    private GameObject activeTrainingButton;
+
+    public GameObject exerciseAddNameInput;
+    public GameObject exerciseAddSetsInput;
+    public GameObject exerciseAddRepeatsInput;
 
     private const float BUTTON_SPACING = 3;
     private const float SCROLL_AREA_HEIGHT = 14;
@@ -78,6 +86,8 @@ public class TrainingManager : MonoBehaviour
 
     public void startEditTraining(GameObject trainingButton)
     {
+        activeTrainingButton = trainingButton;
+
         foreach (GameObject obj in exerciseButtons)
         {
             Destroy(obj);
@@ -110,6 +120,35 @@ public class TrainingManager : MonoBehaviour
             GameObject lastExerciseButton = exerciseButtons[exerciseButtons.Count - 1];
             addExerciseButton.transform.position = lastExerciseButton.transform.position - new Vector3(0, BUTTON_SPACING, 0);
         }
+    }
+
+    public void addExercise()
+    {
+        Exercise newExercise;
+        newExercise.name = exerciseAddNameInput.GetComponentInChildren<TMP_InputField>().text;
+        newExercise.sets = stringToInt(exerciseAddSetsInput.GetComponentInChildren<TMP_InputField>().text);
+        newExercise.repeats = stringToInt(exerciseAddRepeatsInput.GetComponentInChildren<TMP_InputField>().text);
+
+        activeTrainingButton.GetComponent<TrainingButton>().exercises.Add(newExercise);
+
+        startEditTraining(activeTrainingButton);
+        clearExerciseAddPopup();
+    }
+
+    private int stringToInt(string str)
+    {
+        if (int.TryParse(str, out int value))
+        {
+            return value;
+        }
+        return 0;
+    }
+
+    private void clearExerciseAddPopup()
+    {
+        exerciseAddNameInput.GetComponentInChildren<TMP_InputField>().text = "";
+        exerciseAddSetsInput.GetComponentInChildren<TMP_InputField>().text = "";
+        exerciseAddRepeatsInput.GetComponentInChildren<TMP_InputField>().text = "";
     }
 
 
