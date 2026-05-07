@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla olevaan elementtiin.
+public class PageManager : MonoBehaviour //class attached to a UI element
 {
     [SerializeField] private GameObject startPage;
     [SerializeField] private GameObject bottomNavigationBar;
@@ -17,13 +17,13 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
     private Stack<GameObject> popupStack = new Stack<GameObject>();
     private Stack<Vector3> popupPositionStack = new Stack<Vector3>();
 
-    private void Start() //tämä metodi ajetaan automaattisesti sovelluksen alussa
+    private void Start() //this method runs automatically when the application starts
     {
         SwapToPage(startPage);
         bottomNavigationBarOffScreenPosition = bottomNavigationBar.transform.position;
     }
 
-    //poistaa napit käytöstä
+    //disable buttons
     private void disableButtons(GameObject gameObject)
     {
         foreach (Button button in gameObject.GetComponentsInChildren<Button>())
@@ -32,7 +32,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         }
     }
 
-    //ottaa napit takaisin käyttöön
+    //enable buttons again
     private void enableButtons(GameObject gameObject)
     {
         foreach (Button button in gameObject.GetComponentsInChildren<Button>())
@@ -41,7 +41,7 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         }
     }
 
-    //vaihtaa aktiivisen sivun
+    //changes the active page
     public void SwapToPage(GameObject page)
     {
         if (activePage != null)
@@ -53,20 +53,20 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         activePage.transform.position = phonePosition;
     }
 
-    //näyttää popup-ikkunan
+    //shows popup window
     public void ShowPopup(GameObject popup)
     {   
-        //onko popup stack tyhjä
+        //checks if popup stack is empty
         if (popupStack.Count == 0)
         {
-            //jos ei ole vielä auki: 
-            disableButtons(activePage);  //estetään aktiivisen sivun painikkeiden käyttö
-            disableButtons(bottomNavigationBar);  //estetään alapalkin painikkeiden käyttö
+            //if no popup is currently open:
+            disableButtons(activePage);  //disable buttons on the active page
+            disableButtons(bottomNavigationBar);  //disable buttons on the bottom navigation bar
         }
         else
         {   
-            //jos stackissa on jo popup:
-            disableButtons(popupStack.Peek());  //estetään tällä hetkellä näkyvän popupin painikkeet
+            //if there is already a popup in the stack:
+            disableButtons(popupStack.Peek());  //disable buttons on the currently visible popup
         }
 
         popupStack.Push(popup);
@@ -74,34 +74,34 @@ public class PageManager : MonoBehaviour //luokka, joka liitetään ruudulla ole
         popup.transform.position = phonePosition;
     }
 
-    //piilottaa ylimmän/ainoan popup ikkunan
+    //hides the top/only popup window
     public void HidePopup()
     {
-        //onko pop uppeja auki, lopetetaan jos ei
+        //checks if there are any popups open, exits if not
         if (popupStack.Count <= 0)
         {
             return;
         }
 
-        //muuten:
-        //otetaan stacking ylin pop up talteen, ja poistetaan se sieltä
+        //otherwise:
+        //store the top popup from the stack and remove it from the stack
         GameObject popup = popupStack.Pop();
 
-        //palautetaan popup takaisin sen alkuperäiseen sijaintiin
+        //return popup back to its original position
         popup.transform.position = popupPositionStack.Pop();
 
-        //tarkistetaan jäikö vielä pop up ikkunoita:
-        //jos ei:
+        //check if there are still popup windows open:
+        //if not:
         if (popupStack.Count == 0)
         {
-            //aktivoidaan allaoleva sivu ja navigaatiopalkki takaisin käyttöön
+            //enable the active page and navigation bar again
             enableButtons(activePage);
             enableButtons(bottomNavigationBar);
         }
-        //jos pinossa on vielä pop up jäljellä:
+        //if there is still a popup left in the stack:
         else
         {   
-            //aktivoidaan uuden ylimmän popupin painikkeet käyttön
+            //enable buttons on the new top popup
             enableButtons(popupStack.Peek());
         }
     }
